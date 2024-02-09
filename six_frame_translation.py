@@ -10,14 +10,15 @@ if not os.path.exists(fasta_file):
 
 fasta_data = skbio.DNA.read(fasta_file, format="fasta")
 
-print(fasta_data[0])
+translation = fasta_data.translate_six_frames()
 
+frames = [1,2,3,-1,-2,-3]
+translation_by_frame = {}
+for idx, reading_frame in enumerate(translation):
+    translation_by_frame[frames[idx]] = str(reading_frame).split('*') # there is almost certainly a method in the protein class for this
 
+# printing out the last protein sequence from the first reading frame
+print(translation_by_frame[1][-1]) 
 
-# six_frame_translation = skbio.sequence.DNA.translate_six_frames(fasta_data)
-
-# for seq in fasta_data:
-#     six_frame_translation = skbio.sequence.DNA.translate_six_frames(seq)
-#     # Now you have the six-frame translation for each sequence in fasta_data
-#     print("Sequence ID:", seq.metadata['id'])
-#     print("Six-frame translation:", six_frame_translation)
+# printing out the first protein sequence from the first reverse reading frame
+print(translation_by_frame[-1][0]) 
