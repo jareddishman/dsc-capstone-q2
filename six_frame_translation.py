@@ -6,7 +6,7 @@ import os
 fasta_file = '/home/mcdonadt/GCF_000007625.1_ASM762v1_genomic.fna.gz'
 
 if not os.path.exists(fasta_file):
-    raise ValueError()
+    raise FileNotFoundError(f'{fasta_file} does not exist')
 
 fasta_data = skbio.DNA.read(fasta_file, format="fasta")
 
