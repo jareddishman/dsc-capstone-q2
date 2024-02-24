@@ -18,8 +18,7 @@
 <h2> Methods </h2>
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at molestie dui, sit amet rutrum nisi. Aliquam elementum hendrerit tellus ac efficitur. Donec in tristique enim, eu egestas nisi. In hac habitasse platea dictumst. Vestibulum sed felis dui. Morbi sagittis enim non quam sagittis, pretium pulvinar velit faucibus. Cras ullamcorper urna sed mauris fringilla, nec malesuada ante tempus. Praesent tempus, metus ac aliquet laoreet, mauris nisi luctus ligula, et tincidunt velit sapien et eros. Fusce bibendum pretium ligula. Nulla a velit lorem. Curabitur hendrerit id sapien eget semper. Mauris consectetur, turpis ac tincidunt imperdiet, nulla orci volutpat odio, ornare porta quam dolor et felis. Vestibulum lobortis ante vitae diam sodales, in viverra risus vestibulum. Integer ac fringilla purus, vitae luctus lorem. Pellentesque efficitur, sapien at ornare luctus, dui ante tempus ex, vel semper leo lacus eget diam. Duis et urna erat.
 
-
-
+<br>
 <p align="center">
     <img src="imgs/layers.png" alt="photo" width="500"/>
 <p>
