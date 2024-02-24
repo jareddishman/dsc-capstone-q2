@@ -22,6 +22,7 @@
 <p align="center">
     <img src="imgs/layers.png" alt="photo" width="500"/>
 <p>
+<br>
   Donec vel elementum lorem. Curabitur ut maximus lacus, et condimentum nisi. Quisque at nisi vitae risus posuere ultricies vitae non sapien. In id iaculis justo. Sed ut iaculis metus. Mauris eget sollicitudin arcu. Phasellus erat tortor, laoreet a dictum et, efficitur pulvinar lectus.
   
   Fusce faucibus ligula a ante congue lobortis. Fusce posuere tristique est eu pulvinar. Proin aliquet porta enim ut aliquam. Nulla ac blandit turpis. Praesent sit amet lacinia eros, in fringilla orci. Ut nibh sem, mattis porta bibendum ac, tristique at ex. Mauris feugiat efficitur dolor ut commodo. Vestibulum condimentum faucibus congue. Maecenas sit amet quam tempus, fringilla tellus quis, aliquet orci. Proin ac turpis et diam convallis varius. 
