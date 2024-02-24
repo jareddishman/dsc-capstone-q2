@@ -1,4 +1,5 @@
 import numpy as np
+import gzip
 from tensorflow import TensorSpec, data, int32
 
 batch_size = 8
@@ -10,7 +11,7 @@ def read(filepath:str, label=None) -> list:
     '''
     # Open the file in read-only mode ('r')
     output = []
-    with open(filepath, 'r') as file:
+    with gzip.open(filepath, 'r') as file:
         for line in file:
             if not line.startswith(">"):
                 # Only appends sequence data
