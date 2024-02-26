@@ -11,7 +11,7 @@ def predict_from_file(model, filepath):
 
     # Make predictions from model
     print("filesize=", len(vectors))
-    predictions = model.predict(vectors[:1000])
+    predictions = model.predict(vectors[:100])
 
     # Convert probability predictions to binary labels (0 or 1) based on a threshold of 0.5
     return [1 if p > 0.5 else 0 for p in predictions]
