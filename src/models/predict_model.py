@@ -10,7 +10,8 @@ def predict_from_file(model, filepath):
     vectors = vectorize(filepath)
 
     # Make predictions from model
-    predictions = model.predict(vectors)
+    print("filesize=", len(vectors))
+    predictions = model.predict(vectors[:1000])
 
     # Convert probability predictions to binary labels (0 or 1) based on a threshold of 0.5
     return [1 if p > 0.5 else 0 for p in predictions]
