@@ -11,7 +11,7 @@ def read(filepath:str, label=None) -> list:
     '''
     # Open the file in read-only mode ('r')
     output = []
-    with gzip.open(filepath, 'r') as file:
+    with gzip.open(filepath, 'rt') as file:
         for line in file:
             if not line.startswith(">"):
                 # Only appends sequence data
@@ -58,9 +58,13 @@ def vectorize(filepath):
     sequences = read(filepath)
     vectors = []
     for i in sequences:
-        # zero-padding vectors of length 200
-        padded = i.rjust(200, 'X')
-        vectors.append(conv_amino_to_vector(padded))
+        try:
+            # zero-padding vectors of length 200
+            padded = i.rjust(200, 'X')
+            vectors.append(conv_amino_to_vector(padded))
+        except Exception as e:
+            # what the hell was that?
+            continue
     return vectors
 
 class Dataset:
