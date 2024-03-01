@@ -1,1 +1,1 @@
-srun --mem 8g -N 1 -c 1 --time 2:00:00 --pty bash -l -c 'conda activate capstone && find "*.faa.gz" "/projects/greengenes2/gg2_genomes/ncbi/GCA/018/937/" | python run.py'
+srun --mem 8g -N 1 -c 1 --partition gpu --gres=gpu:1 --time 2:00:00 --pty bash -l -c 'conda activate capstone && python run.py'
