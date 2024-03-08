@@ -4,7 +4,7 @@ from tensorflow import TensorSpec, data, int32
 
 batch_size = 8
 
-def read(filepath:str, label=None) -> list:
+def read(filepath:str) -> list:
     '''
     Reads dataset in .fa format
     returns a list of strings
@@ -19,6 +19,21 @@ def read(filepath:str, label=None) -> list:
         file.close()
 
     return output
+
+def read_sequences(filepath):
+    raw_sequences = []
+    headers = []
+    with gzip.open(filepath, 'rt') as file:
+        content = file.read()
+        entries = content.split('>')[1:]
+        for entry in entries:
+            lines = entry.split('\n')
+            header = lines[0]
+            sequence = ''.join(line.strip() for line in lines[1:] if line)
+            if sequence:
+                raw_sequences.append(sequence)
+                headers.append(header)
+    return raw_sequences, headers
 
 def conv_amino_to_vector(sequence):
     '''
@@ -55,17 +70,27 @@ def vectorize(filepath):
     Used to convert a single file into vector format
     Useful for run.py --mode predict
     '''
-    sequences = read(filepath)
+    sequences, headers = read_sequences(filepath)
     vectors = []
-    for i in sequences:
+    sequence_ids = []
+    for seq, header in zip(sequences, headers):
         try:
-            # zero-padding vectors of length 200
-            padded = i.rjust(200, 'X')
-            vectors.append(conv_amino_to_vector(padded))
+            if len(seq) < 10 or len(seq) > 200:
+                # skip sequences that are too short or too long
+                continue
+            # if header in sequence_ids:
+            #     # don't need to run the same exact protein twice?
+            #     continue
+
+            # zero-pad vectors to length 200
+            vector = conv_amino_to_vector(seq)
+            padded_vector = vector + [0] * (200 - len(vector))
+            vectors.append(padded_vector)
+            sequence_ids.append(header)
         except Exception as e:
-            # what the hell was that?
+            # what the hell was that? skip that weird sequence
             continue
-    return vectors
+    return vectors, sequence_ids
 
 class Dataset:
     def __init__(self, positive_files, negative_files, batch_size=32, training=False):
