@@ -21,17 +21,30 @@ def main():
     # if len(files) == 0: files = test_path # temporary to just allow running the damn thing
     files = test_path
 
+
     decision_threshold=0.99
     prediction = predict.predict_from_file(model, files, decision_threshold=decision_threshold)
-    print(prediction['labels'])
+    # headers = prediction['headers']
+
+    show_metrics(prediction, decision_threshold=decision_threshold)
+
+def show_metrics(prediction, **kwargs):
     headers = prediction['headers']
 
     # metrics
-    print(f'num headers = {len(headers)}\nunique headers =', np.unique(headers))
-    print(f'AMP detection rate with threshold of {decision_threshold} = {sum(prediction["labels"])/len(prediction["labels"])}')
+    num_positive = sum(prediction["labels"])
+
+    # displaying metrics
+    # print(f'headers =', headers)
+    print(f'num positive for AMP = {num_positive}. Total sequences processed = {len(prediction["labels"])}')
+    print(f'AMP detection rate with threshold of {kwargs["decision_threshold"]} = {num_positive/len(prediction["labels"])}')
+    # print({k:v for k,v in zip(prediction['headers'], prediction['raw'])})
+    print({k:v for k,v in zip(prediction['headers'], prediction['confidence'])})
     
-# def parse_arguments(parser):
-#     parser.add_argument('-f', help='Specify the file path for .faa file', nargs='+')
+
+def write_output(prediction):
+    ...
+
 
 if __name__ == '__main__':
     start = time.time()
