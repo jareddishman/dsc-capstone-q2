@@ -16,17 +16,20 @@ def main():
     # args = parse_arguments(parser)
 
     model = train_model.load_model()
-    
+
     # files = sys.stdin
     # if len(files) == 0: files = test_path # temporary to just allow running the damn thing
     files = test_path
 
-    prediction = predict.predict_from_file(model, files, decision_threshold=0.95)
+    decision_threshold=0.99
+    prediction = predict.predict_from_file(model, files, decision_threshold=decision_threshold)
     print(prediction['labels'])
-    heads = prediction['headers']
+    headers = prediction['headers']
 
-    print(len(heads), np.unique(heads))
-
+    # metrics
+    print(f'num headers = {len(headers)}\nunique headers =', np.unique(headers))
+    print(f'AMP detection rate with threshold of {decision_threshold} = {sum(prediction["labels"])/len(prediction["labels"])}')
+    
 # def parse_arguments(parser):
 #     parser.add_argument('-f', help='Specify the file path for .faa file', nargs='+')
 
