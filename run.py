@@ -1,59 +1,40 @@
 import argparse
+import sys
 
 import src.features.build_datasets as build
 import src.models.train_model as train_model
 import src.models.predict_model as predict
 
+import time
+import numpy as np
+
+test_path = "/projects/greengenes2/gg2_genomes/ncbi/GCA/018/937/935/GCA_018937935.1_PDT001069856.1/GCA_018937935.1_PDT001069856.1_protein.faa.gz"
+# test_path = "/projects/greengenes2/gg2_genomes/ncbi/GCF/002/967/575/GCF_002967575.1_BS951/GCF_002967575.1_BS951_protein.faa.gz"
+
 def main():
-    parser = argparse.ArgumentParser(description='Predict whether a peptide has antimicrobial properties using a Deep Neural Network')
-    args = parse_arguments(parser)
+    # parser = argparse.ArgumentParser(description='Predict whether a peptide has antimicrobial properties using a Deep Neural Network')
+    # args = parse_arguments(parser)
 
-    if 'train' in args.mode:
-        # trains new model with given training datasets
-        training_dataset = build.create_dataset(args.trainset)  # train, eval, test
-        model = train_model.train_model(training_dataset, save_checkpoint=args.save_weights)
-    else:
-        # loads model from saved weights
-        model = train_model.load_model()
+    model = train_model.load_model()
+
+    # files = sys.stdin
+    # if len(files) == 0: files = test_path # temporary to just allow running the damn thing
+    files = test_path
+
+    decision_threshold=0.99
+    prediction = predict.predict_from_file(model, files, decision_threshold=decision_threshold)
+    print(prediction['labels'])
+    headers = prediction['headers']
+
+    # metrics
+    print(f'num headers = {len(headers)}\nunique headers =', np.unique(headers))
+    print(f'AMP detection rate with threshold of {decision_threshold} = {sum(prediction["labels"])/len(prediction["labels"])}')
     
-    if 'test' in args.mode:
-        # runs test metrics with given test datasets
-        test_dataset = build.create_dataset(args.testset)
-        accuracy = predict.evaluate_model(model, test_dataset)
-        metrics = ['SENS(%)', 'SPEC(%)', 'ACC(%)', 'MCC']
-        for a,m in zip(accuracy[1:], metrics):
-            print(f'{m}: {a}')
-
-    if 'predict' in args.mode:
-        # Outputs binary AMP predictions from .fa file
-        if args.f is None:
-            parser.error('Prediction requires a filepath to be specified with --f')
-        else:
-            # Given a file, output predictions
-            prediction = predict.predict_from_file(model, args.f)
-            print(prediction)
-
-def parse_arguments(parser):
-    parser.add_argument('--mode', choices=['train', 'test', 'predict'], nargs='+', default=['predict'], help='Specify the mode(s) to run (train, test, predict)')
-
-    # Sub-arguments for train mode
-    train_parser = parser.add_argument_group('train mode options')
-    train_parser.add_argument('--trainset', choices=['train', 'test', 'evaluate'], nargs='+', default=['train'], help='Specify the subset(s) of the data to use in training')
-    train_parser.add_argument('--save_weights', action='store_true', help='[Optional] Choose whether to save the model weights')
-
-    # Sub-arguments for test mode
-    test_parser = parser.add_argument_group('test mode options')
-    test_parser.add_argument('--testset', choices=['train', 'test', 'evaluate'], nargs='+', default=['test'], help='Specify the subset(s) of the data to use in testing')
-
-    # Sub-arguments for predict mode
-    test_parser = parser.add_argument_group('predict mode options')
-    test_parser.add_argument('--f', help='Specify the file path for .fa file')
-    # test_parser.add_argument('--p', action='store_true', help='[Optional] Choose whether to print predictions to console')
-    # test_parser.add_argument('--s', default='/', help='[Optional] Saves predictions to given filepath')
-
-    args = parser.parse_args()
-    return args
-
+# def parse_arguments(parser):
+#     parser.add_argument('-f', help='Specify the file path for .faa file', nargs='+')
 
 if __name__ == '__main__':
+    start = time.time()
     main()
+    end = time.time()
+    print('time to completion:', end-start)
