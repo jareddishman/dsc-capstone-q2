@@ -88,10 +88,12 @@ target/
 # Mypy cache
 .mypy_cache/
 
-# Other
+# testing files
 random_testing.py
 test.py
 
-# ignore the outputs from scripting
+# generated scripting files
 scripts/
-outputs/jobs
+
+# temporary filtering for csv outputs
+outputs/
