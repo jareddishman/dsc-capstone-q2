@@ -11,14 +11,17 @@ def predict_from_file(model, filepath, decision_threshold = 0.5):
         raise ValueError("threshold must be between 0 and 1")
 
     # vectorize sequence data from the dataset file
-    vectors, headers = vectorize(filepath)
+    vectors, headers, raw_sequences = vectorize(filepath)
 
     # Make predictions from model
     predictions = model.predict(vectors)
 
     # Convert probability predictions to binary labels (0 or 1) based given decision threshold
-    labels = [1 if p > decision_threshold else 0 for p in predictions]
-    headers = np.array(headers)[np.array(labels)]
+    labels = [True if p > decision_threshold else False for p in predictions]
+    
+    numpy_labels = np.array(labels)
+    headers = np.array(headers)[numpy_labels]
+    AMP_vectors = np.array(raw_sequences)[numpy_labels]
+    confidence = np.array(predictions)[numpy_labels]
 
-    return {'labels': labels, 'headers': headers}
-
+    return {'labels': labels, 'headers': headers, 'raw': AMP_vectors, 'confidence': confidence}

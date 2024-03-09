@@ -73,6 +73,7 @@ def vectorize(filepath):
     sequences, headers = read_sequences(filepath)
     vectors = []
     sequence_ids = []
+    raw_sequences = []
     for seq, header in zip(sequences, headers):
         try:
             if len(seq) < 10 or len(seq) > 200:
@@ -85,12 +86,16 @@ def vectorize(filepath):
             # zero-pad vectors to length 200
             vector = conv_amino_to_vector(seq)
             padded_vector = vector + [0] * (200 - len(vector))
+
             vectors.append(padded_vector)
             sequence_ids.append(header)
+            raw_sequences.append(seq)
         except Exception as e:
-            # what the hell was that? skip that weird sequence
+            print('sequence skipped')
+            # what the hell was that? 
+            # something went wrong, skip that weird sequence
             continue
-    return vectors, sequence_ids
+    return vectors, sequence_ids, raw_sequences
 
 class Dataset:
     def __init__(self, positive_files, negative_files, batch_size=32, training=False):

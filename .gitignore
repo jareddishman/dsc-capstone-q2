@@ -90,5 +90,8 @@ target/
 
 # Other
 random_testing.py
-src/features/build_features.py
 test.py
+
+# ignore the outputs from scripting
+scripts/
+outputs/jobs
