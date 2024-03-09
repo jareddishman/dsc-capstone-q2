@@ -1,6 +1,5 @@
 /projects/greengenes2/gg2_genomes/ncbi/GCA/018/937/935/GCA_018937935.1_PDT001069856.1/GCA_018937935.1_PDT001069856.1_protein.faa.gz
 /projects/greengenes2/gg2_genomes/ncbi/GCF/002/967/575/GCF_002967575.1_BS951/GCF_002967575.1_BS951_protein.faa.gz
-/projects/greengenes2/gg2_genomes/ncbi/GCF/002/967/575/GCF_002967575.1_BS951/GCF_002967575.1_BS951_protein.faa.gz
 /projects/greengenes2/gg2_genomes/ncbi/GCF/002/967/235/GCF_002967235.1_BS979/GCF_002967235.1_BS979_protein.faa.gz
 /projects/greengenes2/gg2_genomes/ncbi/GCF/001/730/385/GCF_001730385.1_ASM173038v1/GCF_001730385.1_ASM173038v1_protein.faa.gz
 /projects/greengenes2/gg2_genomes/ncbi/GCF/001/722/125/GCF_001722125.1_ASM172212v1/GCF_001722125.1_ASM172212v1_protein.faa.gz
