@@ -1,6 +1,7 @@
 import csv
+import os
 
-def dict_to_csv(filepath, dictionary, filtered_keys=None):
+def dict_to_csv(filename, subfolder_path, dictionary, filtered_keys=None):
     if filtered_keys is not None:
         keys = list(dictionary.keys())
         if type(filtered_keys) == list:
@@ -13,7 +14,11 @@ def dict_to_csv(filepath, dictionary, filtered_keys=None):
     else:
         output_dict = dictionary
 
-    with open(filepath, 'w', newline='') as file:
+    if not os.path.exists(subfolder_path):
+        os.makedirs(subfolder_path)
+
+    path = subfolder_path + '/' + filename
+    with open(path, 'w', newline='') as file:
         writer = csv.writer(file)
 
         writer.writerow(output_dict.keys())

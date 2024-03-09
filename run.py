@@ -22,11 +22,12 @@ def main():
 
         # create output csv filepath
         base_path = 'outputs/'
-        # output_path = base_path + path.split('/')[-1].split('.')[0] + '.csv' # using only GCA_ value
-        output_path = base_path + path.split('/')[-1][:-15] + '.csv' # using GCA_ with 1_PDT value
+        path_components  = path.split('/')[6:10]
+        subfolder_path = base_path + '/'.join(path_components[:-1])
+        filename = path_components[-1] + '.csv'
 
         # save header, raw sequence, and prediction confidence to csv
-        output.dict_to_csv(output_path, prediction, filtered_keys='labels')
+        output.dict_to_csv(filename, subfolder_path, prediction, filtered_keys='labels')
 
 def show_metrics(prediction, **kwargs):
     headers = prediction['headers']
