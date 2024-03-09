@@ -1,13 +1,10 @@
-import argparse
 import sys
 
-import src.features.build_datasets as build
 import src.models.train_model as train_model
 import src.models.predict_model as predict
 import src.output.output as output
 
 import time
-import numpy as np
 
 def main():
     model = train_model.load_model()
@@ -17,9 +14,8 @@ def main():
         print(f'processing file at {path}')
         try:
             prediction = predict.predict_from_file(model, path, decision_threshold=decision_threshold)
-        except Exception as e:
-            print('Exception raised on file, skipping...')
-            print(e)
+        except FileNotFoundError as e:
+            print('file not found. Skipping')
             continue
 
         show_metrics(prediction, decision_threshold=decision_threshold)
@@ -27,7 +23,7 @@ def main():
         # create output csv filepath
         base_path = 'outputs/'
         # output_path = base_path + path.split('/')[-1].split('.')[0] + '.csv' # using only GCA_ value
-        output_path = base_path + path.split('/')[-1][:-7] + '.csv' # using GCA_ with 1_PDT value
+        output_path = base_path + path.split('/')[-1][:-15] + '.csv' # using GCA_ with 1_PDT value
 
         # save header, raw sequence, and prediction confidence to csv
         output.dict_to_csv(output_path, prediction, filtered_keys='labels')
