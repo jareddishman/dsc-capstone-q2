@@ -14,8 +14,13 @@ def main():
 
     decision_threshold=0.99
     for path in sys.argv[1:]:
-        print('processing file at {path}')
-        prediction = predict.predict_from_file(model, path, decision_threshold=decision_threshold)
+        print(f'processing file at {path}')
+        try:
+            prediction = predict.predict_from_file(model, path, decision_threshold=decision_threshold)
+        except Exception as e:
+            print('Exception raised on file, skipping...')
+            print(e)
+            continue
 
         show_metrics(prediction, decision_threshold=decision_threshold)
 

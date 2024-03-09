@@ -23,7 +23,7 @@ for ((i=0; i<num_chunks; i++)); do
     # Create a job script for this chunk
     job_script="scripts/jobs/job_$i.sh"
     echo "#!/bin/bash" > "$job_script"
-    echo "python test.py ${chunk_paths[*]}" >> "$job_script"
+    echo "python run.py ${chunk_paths[*]}" >> "$job_script"
     chmod +x "$job_script"
 
     # Submit the job script to the cluster
