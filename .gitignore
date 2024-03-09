@@ -92,3 +92,4 @@ target/
 random_testing.py
 src/features/build_features.py
 test.py
+scripts/
