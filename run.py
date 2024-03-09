@@ -9,30 +9,22 @@ import src.output.output as output
 import time
 import numpy as np
 
-# test_path = "/projects/greengenes2/gg2_genomes/ncbi/GCA/018/937/935/GCA_018937935.1_PDT001069856.1/GCA_018937935.1_PDT001069856.1_protein.faa.gz"
-# test_path = "/projects/greengenes2/gg2_genomes/ncbi/GCF/002/967/575/GCF_002967575.1_BS951/GCF_002967575.1_BS951_protein.faa.gz"
-
-paths = ["/projects/greengenes2/gg2_genomes/ncbi/GCA/018/937/935/GCA_018937935.1_PDT001069856.1/GCA_018937935.1_PDT001069856.1_protein.faa.gz", "/projects/greengenes2/gg2_genomes/ncbi/GCF/002/967/575/GCF_002967575.1_BS951/GCF_002967575.1_BS951_protein.faa.gz"]
-
 def main():
-    # parser = argparse.ArgumentParser(description='Predict whether a peptide has antimicrobial properties using a Deep Neural Network')
-    # args = parse_arguments(parser)
-
     model = train_model.load_model()
 
-    # files = sys.stdin
-    # if len(files) == 0: files = test_path # temporary to just allow running the damn thing
     decision_threshold=0.99
-    for path in paths:
+    for path in sys.argv[1:]:
         print('processing file at {path}')
         prediction = predict.predict_from_file(model, path, decision_threshold=decision_threshold)
 
         show_metrics(prediction, decision_threshold=decision_threshold)
 
+        # create output csv filepath
         base_path = 'outputs/'
         # output_path = base_path + path.split('/')[-1].split('.')[0] + '.csv' # using only GCA_ value
         output_path = base_path + path.split('/')[-1][:-7] + '.csv' # using GCA_ with 1_PDT value
 
+        # save header, raw sequence, and prediction confidence to csv
         output.dict_to_csv(output_path, prediction, filtered_keys='labels')
 
 def show_metrics(prediction, **kwargs):
