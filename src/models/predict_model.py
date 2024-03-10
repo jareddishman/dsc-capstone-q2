@@ -13,6 +13,10 @@ def predict_from_file(model, filepath, decision_threshold = 0.5):
     # vectorize sequence data from the dataset file
     vectors, headers, raw_sequences = vectorize(filepath)
 
+    # return None if no data within search bounds
+    if len(vectors) == 0:
+        return None
+    
     # Make predictions from model
     predictions = model.predict(vectors)
 

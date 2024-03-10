@@ -4,11 +4,11 @@
 source /home/jdishman/miniconda3/etc/profile.d/conda.sh
 conda activate capstone
 
-# Read file paths from paths.txt
-readarray -t file_paths < paths/test_paths.txt
+# Read file paths
+readarray -t file_paths < paths/refseq_paths_only.txt
 
 # Calculate the number of chunks and paths per chunk
-num_chunks=5  # Assuming 2 nodes. Each chunk is sent to a single node
+num_chunks=200  # Also number of nodes as each chunk is sent to a separate node
 num_paths=${#file_paths[@]}
 paths_per_chunk=$((num_paths / num_chunks))
 remainder=$((num_paths % num_chunks))
@@ -27,7 +27,7 @@ for ((i=0; i<num_chunks; i++)); do
     chmod +x "$job_script"
 
     # Submit the job script to the cluster
-    sbatch --mem=8g -N 1 -c 1 --partition=gpu --gres=gpu:1 --time=2:00:00 \
+    sbatch --mem=8g -N 1 -c 1 --partition=gpu --gres=gpu:1 --time=96:00:00 \
            --output="scripts/outputs/job_%j.out" \
            "$job_script"
 done
