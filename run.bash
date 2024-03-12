@@ -1,1 +1,0 @@
-srun --mem 8g -N 1 -c 1 --partition gpu --gres=gpu:1 --time 2:00:00 --pty bash -l -c 'conda activate capstone && python run.py'
