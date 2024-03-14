@@ -12,22 +12,22 @@ def main():
     model = train_model.load_model()
 
     decision_threshold=0.99
-    for path in sys.argv[1:]:
+    for input_path in sys.argv[1:]:
         start = time.time()
-        print(f'processing file at {path}')
+        print(f'processing file at {input_path}')
         
         # create output csv filepath
         base_path = 'outputs/'
-        path_components  = path.split('/')[6:10]
-        subfolder_path = base_path + '/'.join(path_components[:-1])
-        filename = path_components[-1] + '.csv'
+        path_components  = input_path.split('/')[6:10]
+        output_subfolder_path = base_path + '/'.join(path_components[:-1])
+        output_filename = path_components[-1] + '.csv'
 
-        if os.path.exists(subfolder_path + '/' + filename):
+        if os.path.exists(output_subfolder_path + '/' + output_filename):
             print('processing for file already completed, skipping....')
             continue
 
         try:
-            prediction = predict.predict_from_file(model, path, decision_threshold=decision_threshold)
+            prediction = predict.predict_from_file(model, input_path, decision_threshold=decision_threshold)
         except FileNotFoundError as e:
             warnings.warn('file not found. Skipping')
             continue
@@ -46,7 +46,7 @@ def main():
         show_job_metrics(prediction, decision_threshold=decision_threshold)
 
         # save header, raw sequence, and prediction confidence to csv
-        output.dict_to_csv(filename, subfolder_path, prediction, filtered_keys='labels')
+        output.dict_to_csv(output_filename, output_subfolder_path, prediction, filtered_keys='labels')
 
         # show time elapsed
         end = time.time()
