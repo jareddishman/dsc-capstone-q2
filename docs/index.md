@@ -16,6 +16,8 @@
 
 <h3> Datasets </h3>
    &emsp;The data utilized in this study was sourced from the Reference Sequence (RefSeq) database (O' Leary et al. (2015)), a comprehensive set of sequences provided by our mentor, Rob Knight. The RefSeq dataset comprised 358,973 files, with each file containing between 4,000 - 6,000 protein sequences derived from genomic data. Data preprocessing involved removing duplicate entries based on the species ID to eliminate redundancy, converting filepaths to a more efficient format for faster processing, and excluding entries with nonexistent protein filepaths to ensure data integrity. This rigorous preprocessing pipeline yielded 62,607 unique species/samples for downstream analysis. To enrich the dataset, full taxonomic lineages for each species were obtained by employing the ncbitax2lin tool (available at https://github.com/zyxue/ncbitax2lin), which leverages the NCBI taxonomy dump  Sayers et al. (2019); Schoch et al. (2020), a curated set of names and nomenclature for all organisms represented in the public sequence databases.
+   <br>
+<br>
 &emsp;The merged lineage dataset contains four overarching superkingdoms (Bacteria, Eukaryotes, Archaea, and Viruses). These superkingdoms are further stratified into phylum, class, order, family, and genus taxonomic ranks. Table 1 presents a subset of the processed species, illustrating the organism name, taxonomic identifier, and taxonomic lineage, while omitting the filepath column for brevity.
 <br>
 <br>
