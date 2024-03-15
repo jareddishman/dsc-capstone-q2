@@ -18,6 +18,49 @@
 <h2> Methods </h2>
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at molestie dui, sit amet rutrum nisi. Aliquam elementum hendrerit tellus ac efficitur. Donec in tristique enim, eu egestas nisi. In hac habitasse platea dictumst. Vestibulum sed felis dui. Morbi sagittis enim non quam sagittis, pretium pulvinar velit faucibus. Cras ullamcorper urna sed mauris fringilla, nec malesuada ante tempus. Praesent tempus, metus ac aliquet laoreet, mauris nisi luctus ligula, et tincidunt velit sapien et eros. Fusce bibendum pretium ligula. Nulla a velit lorem. Curabitur hendrerit id sapien eget semper. Mauris consectetur, turpis ac tincidunt imperdiet, nulla orci volutpat odio, ornare porta quam dolor et felis. Vestibulum lobortis ante vitae diam sodales, in viverra risus vestibulum. Integer ac fringilla purus, vitae luctus lorem. Pellentesque efficitur, sapien at ornare luctus, dui ante tempus ex, vel semper leo lacus eget diam. Duis et urna erat.
 
+<h2> Results </h2>
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at molestie dui, sit amet rutrum nisi. Aliquam elementum hendrerit tellus ac efficitur. Donec in tristique enim, eu egestas nisi. In hac habitasse platea dictumst. Vestibulum sed felis dui. Morbi sagittis enim non quam sagittis, pretium pulvinar velit faucibus. Cras ullamcorper urna sed mauris fringilla, nec malesuada ante tempus. Praesent tempus, metus ac aliquet laoreet, mauris nisi luctus ligula, et tincidunt velit sapien et eros. Fusce bibendum pretium ligula. Nulla a velit lorem. Curabitur hendrerit id sapien eget semper. Mauris consectetur, turpis ac tincidunt imperdiet, nulla orci volutpat odio, ornare porta quam dolor et felis. Vestibulum lobortis ante vitae diam sodales, in viverra risus vestibulum. Integer ac fringilla purus, vitae luctus lorem. Pellentesque efficitur, sapien at ornare luctus, dui ante tempus ex, vel semper leo lacus eget diam. Duis et urna erat.
+
+
+<h2> Discussion </h2>
+Of the four superkingdoms present in the dataset (Figure 2), the eukaryotes exhib-
+ited a significantly higher average number of antimicrobial peptides (AMPs) compared to
+the other superkingdoms, a striking observation that warrants further investigation. This
+disparity can be attributed to the intricate cellular organization of eukaryotic organisms,
+which allows for the accommodation of a larger repertoire of AMPs and amino acid se-
+quences within each species. Moreover, as eukaryotes face constant threats from microbial
+invaders, the elevated presence of AMPs serves as a robust defense mechanism, a plausible
+evolutionary adaptation to bolster their survival.
+In Figure 3, we observed that our model consistently identified antimicrobial peptides
+(AMPs) across large datasets efficiently. This is an improvement over some prior studies.
+Despite diverse data volumes, our processing times remained stable, showing our model’s
+potential for high bandwidth applications. Limitations include dependency on accurate
+AMP labeling and the scope of the training data. Future work could involve refining the
+model with more datasets and exploring new machine learning techniques to enhance AMP
+identification and contribute to combating antibiotic resistance.
+In contrast, viral species displayed an exceptionally low number of AMPs, with the
+median value being zero among the 6500+ viral species analyzed. This finding is not sur-
+prising when we consider the nature of viruses and their reliance on maintaining the host
+organism’s viability for their propagation. The presence of numerous AMPs could poten-
+tially disrupt the host’s homeostasis, thereby reducing the chances of viral proliferation and
+jeopardizing their survival strategy.
+The analysis also extends to the specific properties of the AMPs themselves, unveiling
+intriguing insights. Many of these peptides can be characterized as membrane proteins,
+a finding that aligns with their functional role of mediating cell-environment interactions,
+positioning them as the first line of defense against harmful microbes. Consequently, their
+antimicrobial properties serve as a strategic adaptation for cellular protection.
+Furthermore, the characterized membrane proteins identified as AMPs can shed light
+on uncharacterized proteins that exhibit antimicrobial properties. A prime example is illus-
+trated in the figure below. While the protein on the right is uncharacterized by biologists, it
+shares striking similarities with the known membrane protein on the left. Both are classified
+as AMPs, and both exhibit a distinct structural pattern, featuring a densely populated amino
+acid head region that tapers into a long tail-like structure. Leveraging this knowledge, we
+can reasonably hypothesize that the uncharacterized protein on the right is also a mem-
+brane protein used by the cell for defensive purposes, given their structural resemblance.
+7
+
+   
+
 <br>
 <p align="center">
     <img src="imgs/layers.png" alt="photo" width="500"/>
