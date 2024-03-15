@@ -86,8 +86,22 @@
 &emsp;Future research aims to establish taxonomic relationships to identify the most prevalent AMPs across species. This work will enhance our understanding of common AMPs within taxonomic clusters and clarify how organisms adapt to their environments. Identifying AMP clusters in various species, we seek insights into their function and evolutionary importance. This study will reveal how species and taxonomies control their microbial populations, highlighting AMPs’ key role in microbial adaptation
 
 <h1> References </h1>
-
-
+O’Leary, Nuala A, Mathew W Wright, J Rodney Brister, Stacy Ciufo, Diana Haddad, Rich McVeigh, Bhanu Rajput, Barbara Robbertse, Brian Smith-White, Danso AkoAdjei, Alexander Astashyn, Azat Badretdin, Yiming Bao, Olga Blinkova, Vyacheslav Brover, Vyacheslav Chetvernin, Jinna Choi, Eric Cox, Olga Ermolaeva, Catherine M Farrell, Tamara Goldfarb, Tripti Gupta, Daniel Haft, Eneida Hatcher, Wratko Hlavina, Vinita S Joardar, Vamsi K Kodali, Wenjun Li, Donna Maglott, Patrick Masterson, Kelly M McGarvey, Michael R Murphy, Kathleen O’Neill, Shashikant Pujar, Sanjida H Rangwala, Daniel Rausch, Lillian D Riddick, Conrad Schoch, Andrei Shkeda, Susan S Storz, Hanzhen Sun, Francoise Thibaud-Nissen, Igor Tolstoy, Raymond E Tully, Anjana R Vatsan, Craig Wallin, David Webb, Wendy Wu, Melissa J Landrum, Avi Kimchi, Tatiana Tatusova, Michael DiCuccio, Paul Kitts, Terence D Murphy, and Kim D Pruitt. 2015. “Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation.” Nucleic Acids Res 44(D1): D733–45
+<br>
+<br>
+Sayers, Eric W, Mark Cavanaugh, Karen Clark, James Ostell, Kim D Pruitt, and Ilene Karsch-Mizrachi. 2019. “GenBank.” Nucleic Acids Res. 47(D1): D94–D99
+<br>
+<br>
+Schoch, Conrad L, Stacy Ciufo, Mikhail Domrachev, Carol L Hotton, Sivakumar Kannan, Rogneda Khovanskaya, Detlef Leipe, Richard Mcveigh, Kathleen O’Neill, Barbara Robbertse, Shobha Sharma, Vladimir Soussov, John P Sullivan, Lu Sun, Seán Turner, and Ilene Karsch-Mizrachi. 2020. “NCBI Taxonomy: a comprehensive update on curation, resources and tools.” Database (Oxford) 2020
+<br>
+<br>
+Veltri, Daniel, Uday Kamath, and Amarda Shehu. 2018. “Deep learning improves antimicrobial peptide recognition.” Bioinformatics 34(16): 2740–2747. [Link]
+<br>
+<br>
+World Health Organization. 2023. “Antimicrobial resistance.” Nov. [Link]
+<br>
+<br>
+Yeaman, Michael R, and Nannette Y Yount. 2003. “Mechanisms of antimicrobial peptide action and resistance.” Pharmacol Rev 55(1): 27–55
 
 
 
