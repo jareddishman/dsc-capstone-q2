@@ -36,6 +36,11 @@
 <h2> Results </h2>
 <br>
 <p align="center">
+    <img src="imgs/box.jpg" alt="photo" width="500"/>
+<p>
+<br>
+<br>
+<p align="center">
     <img src="imgs/pairplotss.jpg" alt="photo" width="500"/>
 <p>
 <br>
