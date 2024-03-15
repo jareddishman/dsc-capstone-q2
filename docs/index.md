@@ -67,7 +67,12 @@ as AMPs, and both exhibit a distinct structural pattern, featuring a densely pop
 acid head region that tapers into a long tail-like structure. Leveraging this knowledge, we
 can reasonably hypothesize that the uncharacterized protein on the right is also a mem-
 brane protein used by the cell for defensive purposes, given their structural resemblance.
-
+<br>
+<p align="center">
+    <img src="imgs/dsc_img.png" alt="photo" width="500"/>
+<p>
+<br>
+below " given their structural resemblance."
 <h3> Conclusion</h3>
 The knowledge and results obtained from this experiment have paved the way for nu-
 merous potential future research avenues. One promising direction lies in investigating the
