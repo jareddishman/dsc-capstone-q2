@@ -32,15 +32,13 @@
 <br>
 <br>
    &emsp;These new sequences of length 16 are passed onto a max pooling layer (pool_length = 5) that uses a sliding window method across the sequence and takes the largest value from it, giving back a representation of the output from the convolutional layer and helps to avoid overfitting. Our model incorporates the use of an LSTM layer (units = 100, unroll = True, stateful = False, dropout = 0.1), which stands for Long Short Term Memory layer. The main purpose of this layer is that it learns long term dependencies of sequential data, making it a perfect fit for peptide sequences. An LSTM layer is a recurrent neural network, meaning that, unlike a traditional neural network, it stores and uses the data it has been passed in as a reference point for the rest of the input. Being able to remember the sequence and its attributes as it gets passed in helps to identify these AMPs. Lastly, the model is tuned with an Adam optimizer with default values and is scored with accuracy using binary cross entropy as our loss function and trained for 10 epochs.
-<h2> Results </h2>
-   &emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at molestie dui, sit amet rutrum nisi. Aliquam elementum hendrerit tellus ac efficitur. Donec in tristique enim, eu egestas nisi. In hac habitasse platea dictumst. Vestibulum sed felis dui. Morbi sagittis enim non quam sagittis, pretium pulvinar velit faucibus. Cras ullamcorper urna sed mauris fringilla, nec malesuada ante tempus. Praesent tempus, metus ac aliquet laoreet, mauris nisi luctus ligula, et tincidunt velit sapien et eros. Fusce bibendum pretium ligula. Nulla a velit lorem. Curabitur hendrerit id sapien eget semper. Mauris consectetur, turpis ac tincidunt imperdiet, nulla orci volutpat odio, ornare porta quam dolor et felis. Vestibulum lobortis ante vitae diam sodales, in viverra risus vestibulum. Integer ac fringilla purus, vitae luctus lorem. Pellentesque efficitur, sapien at ornare luctus, dui ante tempus ex, vel semper leo lacus eget diam. Duis et urna erat.
 
 <h2> Results </h2>
 
 &emsp;The convolutional neural network model processed a total of 62,604 files, corresponding to an equal number of species, encompassing 66,725,844 amino acid sequences. The percentage of sequences identified as antimicrobial peptides (AMPs) varied across the different superkingdoms, with 2.58\% in Archaea, 3.08\% in Bacteria, 6.26\% in Eukaryota, and 2.83\% in Viruses. Notably, for the Viruses superkingdom, the median percentage of AMPs was 0\%, with the 75th percentile at 1.7\%, indicating a skewed distribution. The largest outliers from the Eukaryota and Viruses superkingdoms were Triticum dicoccoides with 2,114 AMPs and Pandoravirus inopinatum with 205 AMPs, respectively, as observed in Figure 3. A subset of the identified AMPs was characterized using the AlphaFold protein structure database and UniProt classifications, revealing that a majority were likely membrane proteins. Additionally, 4,251 species, all of which were classified as Viruses, were excluded from the analysis due to the absence of sequences within the specified length range of 10 to 200 amino acids. This exclusion was not based on a general assumption but rather on a comprehensive scan of the results, confirming that 100\% of the skipped samples belonged to the Viruses superkingdom.
 <br>
 <p align="center">
-    <img src="imgs/dsc2.png" alt="photo" width="500"/>
+    <img src="imgs/pairplots.jpg" alt="photo" width="500"/>
 <p>
 <br>
 <h2> Discussion </h2>
@@ -88,6 +86,4 @@
 
 
 
-  Donec vel elementum lorem. Curabitur ut maximus lacus, et condimentum nisi. Quisque at nisi vitae risus posuere ultricies vitae non sapien. In id iaculis justo. Sed ut iaculis metus. Mauris eget sollicitudin arcu. Phasellus erat tortor, laoreet a dictum et, efficitur pulvinar lectus.
-  
-  Fusce faucibus ligula a ante congue lobortis. Fusce posuere tristique est eu pulvinar. Proin aliquet porta enim ut aliquam. Nulla ac blandit turpis. Praesent sit amet lacinia eros, in fringilla orci. Ut nibh sem, mattis porta bibendum ac, tristique at ex. Mauris feugiat efficitur dolor ut commodo. Vestibulum condimentum faucibus congue. Maecenas sit amet quam tempus, fringilla tellus quis, aliquet orci. Proin ac turpis et diam convallis varius. 
+
