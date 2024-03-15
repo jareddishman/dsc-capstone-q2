@@ -24,7 +24,7 @@
 
 <h2> Discussion </h2>
 
-<h3> Analysis of Results <h3>
+<h3> Analysis of Results </h3>
 Of the four superkingdoms present in the dataset (Figure 2), the eukaryotes exhib-
 ited a significantly higher average number of antimicrobial peptides (AMPs) compared to
 the other superkingdoms, a striking observation that warrants further investigation. This
@@ -70,6 +70,7 @@ merous potential future research avenues. One promising direction lies in invest
 differences in AMP clusters and their distribution across various taxonomic groups. Such
 an endeavor could prove invaluable in understanding the transitive properties of certain
 AMPs and their potential applications in combating diverse microbial threats.
+
 Notably, the eukaryotic organisms have a significantly higher rate of AMPs compared
 to other kingdoms. These peptides give insight into the ways eukaryotes manage the mi-
 crobial communities around them. Delving deeper into the properties of specific AMPs can
@@ -82,8 +83,25 @@ brane proteins, a significant number originate from species that have not been e
 studied, hindering their proper characterization. Building upon the findings illustrated in
 Figure 4, it may be prudent to develop a novel machine learning model to analyze the amino
 acid sequences that compose these uncharacterized AMPs and attempt to find relations to
-characterized AMPs
-   
+characterized AMPs.
+
+<h3> Limitations </h3>
+Due to time and computational constraints, our analysis was limited to a single example per species from the large datasets we had access to. No duplicate entries were included in the process. While we believe that this limitation does not significantly impact the overall output, it is worth noting that there may be specific edge cases or instances where a sample from a different part of the organism could have been more representative.
+
+Additionally, our findings relied on the accuracy of the employed model. Currently, we utilize a 99\% confidence metric to determine whether a sequence is classified as an AMP. Although the results thus far do not indicate a need for adjustment, it is important to acknowledge that even a slight modification, such as using a 95\% confidence interval, could lead to substantial changes in the outcome.
+
+<h3> Future Research </h3>
+Future research aims to establish taxonomic relationships to identify the most preva-
+lent AMPs across species. This work will enhance our understanding of common AMPs
+within taxonomic clusters and clarify how organisms adapt to their environments.
+
+Identifying AMP clusters in various species, we seek insights into their function and
+evolutionary importance. This study will reveal how species and taxonomies control their
+microbial populations, highlighting AMPs’ key role in microbial adaptation
+
+<h1> References </h1>
+
+
 
 <br>
 <p align="center">
