@@ -6,9 +6,11 @@
 <br>
 <br>
 &emsp;We were unable to find any prior research that provided insights into how these peptides function as a part of natural immune defenses. We need broader research to really understand how to use them across all forms of life for medical treatments. Our work expands on previous research by applying advanced machine learning techniques to identify AMPs in a wide variety of organisms and to understand their structure and activity on a larger scale.
- &nbsp;
+<br>
+<br>
 &emsp;Our study is built on a large collection of protein data from the RefSeq database (O'Leary et al. (2015)). We apply machine learning methods such as convolutional neural networks (CNNs) and long short-term memory (LSTM) networks to analyze this proteomic information. By focusing on sequenced protein data derived from genetic information, these techniques enable us to find distribution patterns of AMPs across various organisms. While our research will not discover new mechanisms of AMP function, it provides a detailed map of AMP prevalence, offering valuable data for the development of antimicrobial drugs and enhancing our public health strategies against drug-resistant diseases.
- &nbsp;
+<br>
+<br>
 
 <h2> Methods </h2>
 
@@ -20,11 +22,14 @@
 <p align="center">
     <img src="imgs/layers.png" alt="photo" width="500"/>
 <p>
- &nbsp;
+<br>
+<br>
    &emsp;The architecture of our DNN begins by transforming the peptide sequences into numerical vectors of length 200 to fit the longest AMP of the training set at 183 amino acids and the longest non-AMP at 175 amino acids. This is done by first breaking the sequence apart such that each character of the sequence is a single entry in an array. Next we assign an integer to each of the 20 basic amino acid characters and front-pad the sequence with 0’s to make the string 200 characters in length.
-  &nbsp;
+<br>
+<br>
    &emsp;Next, these sequences are passed into an embedding layer, which takes as input the length 200 array and organizes it into a smaller vector of length 128. The convolutional layer used in this project was a 1D conv layer (filters = 64, kernel\_size = 16, activation="relu"). A convolutional layer acts as a way to store large amounts of information into a small vector while still containing all the necessary information provided to it. In short, a convolutional layer takes a small part of the input and stores small sections as certain values for the output. Do this for the entire dataset and you’re left with a compressed data structure that is easier to handle.
- &nbsp;
+<br>
+<br>
    &emsp;These new sequences of length 16 are passed onto a max pooling layer (pool\_length = 5) that uses a sliding window method across the sequence and takes the largest value from it, giving back a representation of the output from the convolutional layer and helps to avoid overfitting. Our model incorporates the use of an LSTM layer (units = 100, unroll = True, stateful = False, dropout = 0.1), which stands for Long Short Term Memory layer. The main purpose of this layer is that it learns long term dependencies of sequential data, making it a perfect fit for peptide sequences. An LSTM layer is a recurrent neural network, meaning that, unlike a traditional neural network, it stores and uses the data it has been passed in as a reference point for the rest of the input. Being able to remember the sequence and its attributes as it gets passed in helps to identify these AMPs. Lastly, the model is tuned with an Adam optimizer with default values and is scored with accuracy using binary cross entropy as our loss function and trained for 10 epochs.
 <h2> Results </h2>
    &emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at molestie dui, sit amet rutrum nisi. Aliquam elementum hendrerit tellus ac efficitur. Donec in tristique enim, eu egestas nisi. In hac habitasse platea dictumst. Vestibulum sed felis dui. Morbi sagittis enim non quam sagittis, pretium pulvinar velit faucibus. Cras ullamcorper urna sed mauris fringilla, nec malesuada ante tempus. Praesent tempus, metus ac aliquet laoreet, mauris nisi luctus ligula, et tincidunt velit sapien et eros. Fusce bibendum pretium ligula. Nulla a velit lorem. Curabitur hendrerit id sapien eget semper. Mauris consectetur, turpis ac tincidunt imperdiet, nulla orci volutpat odio, ornare porta quam dolor et felis. Vestibulum lobortis ante vitae diam sodales, in viverra risus vestibulum. Integer ac fringilla purus, vitae luctus lorem. Pellentesque efficitur, sapien at ornare luctus, dui ante tempus ex, vel semper leo lacus eget diam. Duis et urna erat.
@@ -34,29 +39,38 @@
 
 <h3> Analysis of Results </h3>
 &emsp;Of the four superkingdoms present in the dataset (Figure 2), the eukaryotes exhibited a significantly higher average number of antimicrobial peptides (AMPs) compared to the other superkingdoms, a striking observation that warrants further investigation. This disparity can be attributed to the intricate cellular organization of eukaryotic organisms, which allows for the accommodation of a larger repertoire of AMPs and amino acid sequences within each species. Moreover, as eukaryotes face constant threats from microbial invaders, the elevated presence of AMPs serves as a robust defense mechanism, a plausible evolutionary adaptation to bolster their survival.
- &nbsp;
+<br>
+<br>
 &emsp;In Figure 3, we observed that our model consistently identified antimicrobial peptides (AMPs) across large datasets efficiently. This is an improvement over some prior studies. Despite diverse data volumes, our processing times remained stable, showing our model’s potential for high bandwidth applications. Limitations include dependency on accurate AMP labeling and the scope of the training data. Future work could involve refining the model with more datasets and exploring new machine learning techniques to enhance AMP identification and contribute to combating antibiotic resistance.
- &nbsp;
+<br>
+<br>
 &emsp;In contrast, viral species displayed an exceptionally low number of AMPs, with the median value being zero among the 6500+ viral species analyzed. This finding is not surprising when we consider the nature of viruses and their reliance on maintaining the host organism’s viability for their propagation. The presence of numerous AMPs could potentially disrupt the host’s homeostasis, thereby reducing the chances of viral proliferation and jeopardizing their survival strategy.
- &nbsp;
+<br>
+<br>
 &emsp;The analysis also extends to the specific properties of the AMPs themselves, unveiling intriguing insights. Many of these peptides can be characterized as membrane proteins, a finding that aligns with their functional role of mediating cell-environment interactions, positioning them as the first line of defense against harmful microbes. Consequently, their antimicrobial properties serve as a strategic adaptation for cellular protection.
- &nbsp;
+<br>
+<br>
 &emsp;Furthermore, the characterized membrane proteins identified as AMPs can shed light on uncharacterized proteins that exhibit antimicrobial properties. A prime example is illustrated in the figure below. While the protein on the right is uncharacterized by biologists, it shares striking similarities with the known membrane protein on the left. Both are classified as AMPs, and both exhibit a distinct structural pattern, featuring a densely populated amino acid head region that tapers into a long tail-like structure. Leveraging this knowledge, we can reasonably hypothesize that the uncharacterized protein on the right is also a membrane protein used by the cell for defensive purposes, given their structural resemblance.
- &nbsp;
+<br>
+<br>
 <p align="center">
     <img src="imgs/dsc_img.png" alt="photo" width="500"/>
 <p>
- &nbsp;
+<br>
+<br>
 <h3> Conclusion</h3>
 &emsp;The knowledge and results obtained from this experiment have paved the way for numerous potential future research avenues. One promising direction lies in investigating the differences in AMP clusters and their distribution across various taxonomic groups. Such an endeavor could prove invaluable in understanding the transitive properties of certain AMPs and their potential applications in combating diverse microbial threats.
- &nbsp;
+<br>
+<br>
 &emsp;Notably, the eukaryotic organisms have a significantly higher rate of AMPs compared to other kingdoms. These peptides give insight into the ways eukaryotes manage the microbial communities around them. Delving deeper into the properties of specific AMPs can shed further light on our current understanding of these molecules and possibly lead to the creation of new classes of antibiotics.
- &nbsp;
+<br>
+<br>
 &emsp;The results from this study also highlight the potential for identifying and classifying the uncharacterized AMPs that our model has uncovered. While many AMPs could be membrane proteins, a significant number originate from species that have not been extensively studied, hindering their proper characterization. Building upon the findings illustrated in Figure 4, it may be prudent to develop a novel machine learning model to analyze the amino acid sequences that compose these uncharacterized AMPs and attempt to find relations to characterized AMPs.
 
 <h3> Limitations </h3>
 &emsp;Due to time and computational constraints, our analysis was limited to a single example per species from the large datasets we had access to. No duplicate entries were included in the process. While we believe that this limitation does not significantly impact the overall output, it is worth noting that there may be specific edge cases or instances where a sample from a different part of the organism could have been more representative.
- &nbsp;
+<br>
+<br>
 &emsp;Additionally, our findings relied on the accuracy of the employed model. Currently, we utilize a 99\% confidence metric to determine whether a sequence is classified as an AMP. Although the results thus far do not indicate a need for adjustment, it is important to acknowledge that even a slight modification, such as using a 95\% confidence interval, could lead to substantial changes in the outcome.
 
 <h3> Future Research </h3>
