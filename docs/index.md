@@ -24,7 +24,6 @@
     <img src="imgs/layers.png" alt="photo" width="500"/>
 <p>
 <br>
-<br>
    &emsp;The architecture of our DNN begins by transforming the peptide sequences into numerical vectors of length 200 to fit the longest AMP of the training set at 183 amino acids and the longest non-AMP at 175 amino acids. This is done by first breaking the sequence apart such that each character of the sequence is a single entry in an array. Next we assign an integer to each of the 20 basic amino acid characters and front-pad the sequence with 0’s to make the string 200 characters in length.
 <br>
 <br>
@@ -57,7 +56,6 @@
 <p align="center">
     <img src="imgs/dsc_img.png" alt="photo" width="500"/>
 <p>
-<br>
 <br>
 <h3> Conclusion</h3>
 &emsp;The knowledge and results obtained from this experiment have paved the way for numerous potential future research avenues. One promising direction lies in investigating the differences in AMP clusters and their distribution across various taxonomic groups. Such an endeavor could prove invaluable in understanding the transitive properties of certain AMPs and their potential applications in combating diverse microbial threats.
