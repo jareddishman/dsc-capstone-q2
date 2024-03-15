@@ -18,7 +18,8 @@
    &emsp;The data that we utilized was sourced from RefSeq (O’Leary et al. (2015)) courtesy of our mentor, Rob Knight. The RefSeq dataset consists of 358,973 files with each file containing 4,000 - 6,000 protein sequences. We preprocessed our data by dropping duplicate entries based on the species ID, converting filepaths for faster processing format, and removing entries with nonexistent protein filepaths leaving us with 62,607 unique species/samples to be analyzed. We also added full taxonomic lineages for each species in our dataset by using the ncbitax2lin tool (available via https://github.com/zyxue/ncbitax2lin) along with the NCBI taxonomy dump Sayers et al. (2019) Schoch et al. (2020). The merged lineage dataset contains four overarching superkingdoms (Bacteria, Eukaryotes, Archaea, and Viruses) that are further divided by phylum, class, order, family, and genus. Below is a small subset of the species processed, showing the organism name, taxonomic ID, and taxonomic lineage, but omitting the filepath column.
 <h3> DNN architecture </h3>
    &emsp;To predict and identify the AMPs, we built a convolutional DNN from the Keras framework (v2.10.0) using a sequential model and a TensorFlow base (v2.10.1). The motive for the DNN was to follow in line with what  Veltri, Kamath and Shehu (2018) did in their original study, showing that a DNN was effective in identifying more ambiguous patterns of AMPs that regular processing may gloss over.
- &nbsp;
+<br>
+<br>
 <p align="center">
     <img src="imgs/layers.png" alt="photo" width="500"/>
 <p>
