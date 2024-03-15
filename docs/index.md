@@ -40,7 +40,7 @@
 &emsp;The convolutional neural network model processed a total of 62,604 files, corresponding to an equal number of species, encompassing 66,725,844 amino acid sequences. The percentage of sequences identified as antimicrobial peptides (AMPs) varied across the different superkingdoms, with 2.58\% in Archaea, 3.08\% in Bacteria, 6.26\% in Eukaryota, and 2.83\% in Viruses. Notably, for the Viruses superkingdom, the median percentage of AMPs was 0\%, with the 75th percentile at 1.7\%, indicating a skewed distribution. The largest outliers from the Eukaryota and Viruses superkingdoms were Triticum dicoccoides with 2,114 AMPs and Pandoravirus inopinatum with 205 AMPs, respectively, as observed in Figure 3. A subset of the identified AMPs was characterized using the AlphaFold protein structure database and UniProt classifications, revealing that a majority were likely membrane proteins. Additionally, 4,251 species, all of which were classified as Viruses, were excluded from the analysis due to the absence of sequences within the specified length range of 10 to 200 amino acids. This exclusion was not based on a general assumption but rather on a comprehensive scan of the results, confirming that 100\% of the skipped samples belonged to the Viruses superkingdom.
 <br>
 <p align="center">
-    <img src="imgs/pairplots.jpg" alt="photo" width="500"/>
+    <img src="imgs/dsc2.png" alt="photo" width="500"/>
 <p>
 <br>
 <h2> Discussion </h2>
