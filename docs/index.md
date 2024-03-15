@@ -29,44 +29,15 @@ Our study is built on a large collection of protein data from the RefSeq databas
 <h2> Discussion </h2>
 
 <h3> Analysis of Results </h3>
-Of the four superkingdoms present in the dataset (Figure 2), the eukaryotes exhib-
-ited a significantly higher average number of antimicrobial peptides (AMPs) compared to
-the other superkingdoms, a striking observation that warrants further investigation. This
-disparity can be attributed to the intricate cellular organization of eukaryotic organisms,
-which allows for the accommodation of a larger repertoire of AMPs and amino acid se-
-quences within each species. Moreover, as eukaryotes face constant threats from microbial
-invaders, the elevated presence of AMPs serves as a robust defense mechanism, a plausible
-evolutionary adaptation to bolster their survival.
+Of the four superkingdoms present in the dataset (Figure 2), the eukaryotes exhibited a significantly higher average number of antimicrobial peptides (AMPs) compared to the other superkingdoms, a striking observation that warrants further investigation. This disparity can be attributed to the intricate cellular organization of eukaryotic organisms, which allows for the accommodation of a larger repertoire of AMPs and amino acid sequences within each species. Moreover, as eukaryotes face constant threats from microbial invaders, the elevated presence of AMPs serves as a robust defense mechanism, a plausible evolutionary adaptation to bolster their survival.
 
-In Figure 3, we observed that our model consistently identified antimicrobial peptides
-(AMPs) across large datasets efficiently. This is an improvement over some prior studies.
-Despite diverse data volumes, our processing times remained stable, showing our model’s
-potential for high bandwidth applications. Limitations include dependency on accurate
-AMP labeling and the scope of the training data. Future work could involve refining the
-model with more datasets and exploring new machine learning techniques to enhance AMP
-identification and contribute to combating antibiotic resistance.
+In Figure 3, we observed that our model consistently identified antimicrobial peptides (AMPs) across large datasets efficiently. This is an improvement over some prior studies. Despite diverse data volumes, our processing times remained stable, showing our model’s potential for high bandwidth applications. Limitations include dependency on accurate AMP labeling and the scope of the training data. Future work could involve refining the model with more datasets and exploring new machine learning techniques to enhance AMP identification and contribute to combating antibiotic resistance.
 
-In contrast, viral species displayed an exceptionally low number of AMPs, with the
-median value being zero among the 6500+ viral species analyzed. This finding is not sur-
-prising when we consider the nature of viruses and their reliance on maintaining the host
-organism’s viability for their propagation. The presence of numerous AMPs could poten-
-tially disrupt the host’s homeostasis, thereby reducing the chances of viral proliferation and
-jeopardizing their survival strategy.
+In contrast, viral species displayed an exceptionally low number of AMPs, with the median value being zero among the 6500+ viral species analyzed. This finding is not surprising when we consider the nature of viruses and their reliance on maintaining the host organism’s viability for their propagation. The presence of numerous AMPs could potentially disrupt the host’s homeostasis, thereby reducing the chances of viral proliferation and jeopardizing their survival strategy.
 
-The analysis also extends to the specific properties of the AMPs themselves, unveiling
-intriguing insights. Many of these peptides can be characterized as membrane proteins,
-a finding that aligns with their functional role of mediating cell-environment interactions,
-positioning them as the first line of defense against harmful microbes. Consequently, their
-antimicrobial properties serve as a strategic adaptation for cellular protection.
+The analysis also extends to the specific properties of the AMPs themselves, unveiling intriguing insights. Many of these peptides can be characterized as membrane proteins, a finding that aligns with their functional role of mediating cell-environment interactions, positioning them as the first line of defense against harmful microbes. Consequently, their antimicrobial properties serve as a strategic adaptation for cellular protection.
 
-Furthermore, the characterized membrane proteins identified as AMPs can shed light
-on uncharacterized proteins that exhibit antimicrobial properties. A prime example is illus-
-trated in the figure below. While the protein on the right is uncharacterized by biologists, it
-shares striking similarities with the known membrane protein on the left. Both are classified
-as AMPs, and both exhibit a distinct structural pattern, featuring a densely populated amino
-acid head region that tapers into a long tail-like structure. Leveraging this knowledge, we
-can reasonably hypothesize that the uncharacterized protein on the right is also a mem-
-brane protein used by the cell for defensive purposes, given their structural resemblance.
+Furthermore, the characterized membrane proteins identified as AMPs can shed light on uncharacterized proteins that exhibit antimicrobial properties. A prime example is illustrated in the figure below. While the protein on the right is uncharacterized by biologists, it shares striking similarities with the known membrane protein on the left. Both are classified as AMPs, and both exhibit a distinct structural pattern, featuring a densely populated amino acid head region that tapers into a long tail-like structure. Leveraging this knowledge, we can reasonably hypothesize that the uncharacterized protein on the right is also a membrane protein used by the cell for defensive purposes, given their structural resemblance.
 <br>
 <p align="center">
     <img src="imgs/dsc_img.png" alt="photo" width="500"/>
@@ -74,25 +45,11 @@ brane protein used by the cell for defensive purposes, given their structural re
 <br>
 below " given their structural resemblance."
 <h3> Conclusion</h3>
-The knowledge and results obtained from this experiment have paved the way for nu-
-merous potential future research avenues. One promising direction lies in investigating the
-differences in AMP clusters and their distribution across various taxonomic groups. Such
-an endeavor could prove invaluable in understanding the transitive properties of certain
-AMPs and their potential applications in combating diverse microbial threats.
+The knowledge and results obtained from this experiment have paved the way for numerous potential future research avenues. One promising direction lies in investigating the differences in AMP clusters and their distribution across various taxonomic groups. Such an endeavor could prove invaluable in understanding the transitive properties of certain AMPs and their potential applications in combating diverse microbial threats.
 
-Notably, the eukaryotic organisms have a significantly higher rate of AMPs compared
-to other kingdoms. These peptides give insight into the ways eukaryotes manage the mi-
-crobial communities around them. Delving deeper into the properties of specific AMPs can
-shed further light on our current understanding of these molecules and possibly lead to the
-creation of new classes of antibiotics.
+Notably, the eukaryotic organisms have a significantly higher rate of AMPs compared to other kingdoms. These peptides give insight into the ways eukaryotes manage the microbial communities around them. Delving deeper into the properties of specific AMPs can shed further light on our current understanding of these molecules and possibly lead to the creation of new classes of antibiotics.
 
-The results from this study also highlight the potential for identifying and classifying
-the uncharacterized AMPs that our model has uncovered. While many AMPs could be mem-
-brane proteins, a significant number originate from species that have not been extensively
-studied, hindering their proper characterization. Building upon the findings illustrated in
-Figure 4, it may be prudent to develop a novel machine learning model to analyze the amino
-acid sequences that compose these uncharacterized AMPs and attempt to find relations to
-characterized AMPs.
+The results from this study also highlight the potential for identifying and classifying the uncharacterized AMPs that our model has uncovered. While many AMPs could be membrane proteins, a significant number originate from species that have not been extensively studied, hindering their proper characterization. Building upon the findings illustrated in Figure 4, it may be prudent to develop a novel machine learning model to analyze the amino acid sequences that compose these uncharacterized AMPs and attempt to find relations to characterized AMPs.
 
 <h3> Limitations </h3>
 Due to time and computational constraints, our analysis was limited to a single example per species from the large datasets we had access to. No duplicate entries were included in the process. While we believe that this limitation does not significantly impact the overall output, it is worth noting that there may be specific edge cases or instances where a sample from a different part of the organism could have been more representative.
@@ -100,13 +57,9 @@ Due to time and computational constraints, our analysis was limited to a single 
 Additionally, our findings relied on the accuracy of the employed model. Currently, we utilize a 99\% confidence metric to determine whether a sequence is classified as an AMP. Although the results thus far do not indicate a need for adjustment, it is important to acknowledge that even a slight modification, such as using a 95\% confidence interval, could lead to substantial changes in the outcome.
 
 <h3> Future Research </h3>
-Future research aims to establish taxonomic relationships to identify the most preva-
-lent AMPs across species. This work will enhance our understanding of common AMPs
-within taxonomic clusters and clarify how organisms adapt to their environments.
+Future research aims to establish taxonomic relationships to identify the most prevalent AMPs across species. This work will enhance our understanding of common AMPs within taxonomic clusters and clarify how organisms adapt to their environments.
 
-Identifying AMP clusters in various species, we seek insights into their function and
-evolutionary importance. This study will reveal how species and taxonomies control their
-microbial populations, highlighting AMPs’ key role in microbial adaptation
+Identifying AMP clusters in various species, we seek insights into their function and evolutionary importance. This study will reveal how species and taxonomies control their microbial populations, highlighting AMPs’ key role in microbial adaptation
 
 <h1> References </h1>
 
