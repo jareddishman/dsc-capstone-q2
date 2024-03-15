@@ -45,7 +45,6 @@
     <img src="imgs/dsc_img.png" alt="photo" width="500"/>
 <p>
 <br>
-below " given their structural resemblance."
 <h3> Conclusion</h3>
 &emsp;The knowledge and results obtained from this experiment have paved the way for numerous potential future research avenues. One promising direction lies in investigating the differences in AMP clusters and their distribution across various taxonomic groups. Such an endeavor could prove invaluable in understanding the transitive properties of certain AMPs and their potential applications in combating diverse microbial threats.
 <br>
